@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026软件所新年联欢晚会邀请函</title>
+
+    <style>
+        /* ===== 全局：沉浸式深红科技背景 ===== */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(255, 215, 120, 0.05),
+                    rgba(255, 215, 120, 0.05)
+                ),
+                url("lantern.png") repeat,
+                radial-gradient(circle at 20% 10%, rgba(255, 80, 80, 0.15), transparent 40%),
+                radial-gradient(circle at 80% 90%, rgba(255, 120, 120, 0.08), transparent 40%),
+                linear-gradient(180deg, #1a0204 0%, #3b0505 50%, #120000 100%);
+
+            background-size:
+                auto,
+                300px 300px,   /* 桌面默认密度 */
+                auto,
+                auto,
+                auto;
+
+            background-position:
+                0 0,
+                20px 40px,
+                center,
+                center,
+                center;
+
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+            animation: lanternFloat 25s ease-in-out infinite;
+        }
+
+
+        /* ===== 卡片：Apple 风毛玻璃 ===== */
+        .card {
+            width: 90%;
+            max-width: 380px;
+            padding: 44px 30px;
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* 顶部科技光条 */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ffb199, #ff0844, #ffb199);
+        }
+
+        /* ===== 动画 ===== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ===== 徽章 ===== */
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+
+            color: #b71c1c;
+            background: rgba(183, 28, 28, 0.12);
+            backdrop-filter: blur(6px);
+
+            margin-bottom: 18px;
+        }
+
+        /* ===== 标题 ===== */
+        .header-title {
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            color: #b71c1c;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .main-theme {
+            font-size: 1.9rem;
+            font-weight: 800;
+            line-height: 1.35;
+            letter-spacing: 0.5px;
+            color: #111;
+            margin: 22px 0;
+
+            position: relative;
+
+        }
+
+        /*  */
+        .main-theme::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            bottom: -24px;
+
+            width: 120px;
+            height: 120px;
+
+            background-image: url("horse.png"); /* 马年剪影 PNG / SVG */
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+
+
+        .divider {
+            height: 1px;
+            width: 60%;
+            margin: 26px auto;
+            background: #e5e5e5;
+        }
+
+        /* ===== 正文 ===== */
+        .content-body {
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .salutation {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            color: #000;
+        }
+
+        .info-item {
+            margin: 14px 0;
+            font-size: 1rem;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            margin-top: 36px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* ===== 小屏适配 ===== */
+        @media (max-width: 360px) {
+            .main-theme {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size:
+                    auto,
+                    240px 240px,   /* 移动端：更稀 */
+                    auto,
+                    auto,
+                    auto;
+            }
+        }
+
+        @keyframes lanternFloat {
+            0% {
+                background-position:
+                    0 0,
+                    20px 40px,
+                    center,
+                    center,
+                    center;
+            }
+            50% {
+                background-position:
+                    0 0,
+                    20px 60px,   /* 向下轻微漂 */
+                    center,
+                    center,
+                    center;
+            }
+            100% {
+                background-position:
+                    0 0,
+                    20px 40px,
+                    center,
+                    center,
+                    center;
+            }
+        }
+
+
+        /* ===== Logo ===== */
+        .logo {
+            width: 280px;
+            margin: 0 auto 14px;
+
+            opacity: 0.92;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="logo">
+            <img src="logo-1.png" alt="中国科学院软件研究所 Logo">
+        </div>
+
+        <!-- <div class="badge">INVITATION</div> -->
+
+        <!-- <div class="header-title">
+            中国科学院软件研究所
+        </div> -->
+
+        <h1 class="main-theme">
+            马踏新章 · 沐光而行<br>
+            2026年 · 新年联欢晚会
+        </h1>
+
+        <div class="divider"></div>
+
+        <div class="content-body">
+            <p class="salutation">亲爱的 同学：</p>
+            <p>
+                岁序更替，华章日新。诚邀您出席中国科学院软件研究所
+                2026 年新年联欢晚会，共赴光影盛宴，开启新年新篇章。
+            </p>
+
+            <div class="info-item">
+                🐎 时间：
+                <span class="highlight">2025年12月26日（星期五）19:00</span>
+            </div>
+
+            <div class="info-item">
+                🏮 地点：
+                <span class="highlight">软件所 5号楼 4层大报告厅</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            中国科学院软件研究所 研究生会<br>
+            2025年12月
+        </div>
+    </div>
+
+</body>
+</html>
