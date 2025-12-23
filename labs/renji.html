@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 软件所新年联欢晚会邀请函</title>
+
+<style>
+/* ===== 页面背景 ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255,80,80,.15), transparent 40%),
+        radial-gradient(circle at 80% 90%, rgba(255,120,120,.08), transparent 40%),
+        linear-gradient(180deg, #1a0204 0%, #3b0505 50%, #120000 100%);
+
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== 外层容器（灯笼 & 卡片的共同参考系） ===== */
+.card-wrapper {
+    position: relative;
+}
+
+/* ===== 灯笼（在卡片外 & 背后） ===== */
+.lantern {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    background: url("lantern.png") no-repeat center / contain;
+
+    opacity: 0.55;
+    pointer-events: none;
+
+    z-index: 0;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255,190,90,.45))
+        drop-shadow(0 0 24px rgba(255,150,50,.25));
+
+    animation: lanternFloat 36s ease-in-out infinite;
+}
+
+/* 灯笼中心 = 卡片四角 */
+.lantern.tl { top: -100px; left: -100px; transform: translate(-50%, -50%); }
+.lantern.tr { top: -100px; right: -100px; transform: translate(50%, -50%); }
+.lantern.bl { bottom: -100px; left: -100px; transform: translate(-50%, 50%); }
+.lantern.br { bottom: -100px; right: -100px; transform: translate(50%, 50%); }
+
+/* ===== 卡片本体 ===== */
+.card {
+    position: relative;
+    z-index: 1;
+
+    width: 90%;
+    max-width: 380px;
+    padding: 44px 30px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.6);
+
+    text-align: center;
+    overflow: hidden; /* ✅ 只裁卡片自身 */
+    animation: fadeUp 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+/* 顶部彩条（被圆角裁切） */
+.card::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:5px;
+    background: linear-gradient(90deg,#ffb199,#ff0844,#ffb199);
+}
+
+/* ===== Logo ===== */
+.logo {
+    width: 280px;
+    margin: 0 auto 14px;
+    opacity: .92;
+}
+.logo img { width:100%; display:block; }
+
+/* ===== 标题 ===== */
+.main-theme {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: #111;
+    margin: 22px 0;
+    position: relative;
+}
+
+.main-theme::after {
+    content:"";
+    position:absolute;
+    right:-10px;
+    bottom:-24px;
+    width:120px;
+    height:120px;
+    background:url("horse.png") no-repeat center / contain;
+    opacity:.5;
+}
+
+/* ===== 内容 ===== */
+.divider {
+    height:1px;
+    width:60%;
+    margin:26px auto;
+    background:#e5e5e5;
+}
+
+.content-body {
+    text-align:left;
+    font-size:1rem;
+    line-height:1.8;
+    color:#444;
+}
+
+.salutation {
+    font-weight:700;
+    font-size:1.1rem;
+    margin-bottom:14px;
+    color:#000;
+}
+
+.info-item { margin:14px 0; }
+.highlight { font-weight:700; color:#000; }
+
+/* ===== 页脚 ===== */
+.footer {
+    margin-top:36px;
+    text-align:right;
+    font-size:.9rem;
+    color:#777;
+}
+
+/* ===== 动画 ===== */
+@keyframes fadeUp {
+    from { opacity:0; transform:translateY(30px) scale(.98); }
+    to   { opacity:1; transform:none; }
+}
+
+@keyframes lanternFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(6px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== 移动端 ===== */
+@media (max-width: 480px) {
+    .lantern {
+        width: 90px;
+        height: 90px;
+        opacity: 0.45;
+    }
+
+    .main-theme {
+        font-size: 1.7rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card-wrapper">
+
+    <!-- 四角灯笼（在卡片外） -->
+    <div class="lantern tl"></div>
+    <div class="lantern tr"></div>
+    <div class="lantern bl"></div>
+    <div class="lantern br"></div>
+
+    <!-- 卡片 -->
+    <div class="card">
+
+        <div class="logo">
+            <img src="logo-1.png" alt="中国科学院软件研究所 Logo">
+        </div>
+
+        <h1 class="main-theme">
+            马踏新章 · 沐光而行<br>
+            2026年 · 新年联欢晚会
+        </h1>
+
+        <div class="divider"></div>
+
+        <div class="content-body">
+            <p class="salutation">亲爱的 陈易翔 主席：</p>
+            <p>
+                岁序更替，华章日新。诚邀 <b>您及人机交互技术与智能信息处理实验分研会的同学</b> 出席中国科学院软件研究所
+                2026 年新年联欢晚会，共赴光影盛宴，开启新年新篇章。
+            </p>
+
+            <div class="info-item">🐎 时间：
+                <span class="highlight">2025年12月26日（星期五）19:00</span>
+            </div>
+
+            <div class="info-item">🏮 地点：
+                <span class="highlight">软件所 5号楼 4层大报告厅</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            中国科学院软件研究所 研究生会<br>
+            2025年12月
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
